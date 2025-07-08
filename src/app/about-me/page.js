@@ -5,7 +5,7 @@ export default function AboutMe() {
     <main className="min-h-screen flex items-center justify-center px-4 py-16 bg-gradient-to-br from-[var(--background)] via-[var(--primary)]/10 to-[var(--background)]">
       <div className="w-full max-w-4xl rounded-3xl shadow-2xl p-0 md:p-1 bg-white/70 dark:bg-[var(--background)]/80 backdrop-blur-md border border-[var(--border)]">
         <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12">
-          {/* Profile Image - Keep as is */}
+      
           <div className="relative w-full md:w-96 h-80 md:h-[420px] rounded-2xl overflow-hidden shadow-lg border-2 border-[var(--primary)] bg-[var(--background)]">
             <Image
               src="/assets/amit.jpg"
@@ -16,7 +16,7 @@ export default function AboutMe() {
             />
           </div>
 
-          {/* About Content */}
+ 
           <div className="flex-1 space-y-6 text-center md:text-left">
             <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--primary)] leading-tight drop-shadow-sm">
               👋 Hi, I'm Amit Bahuguna
