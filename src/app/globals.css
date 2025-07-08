@@ -1,29 +1,75 @@
 @import "tailwindcss";
 
-/* Light mode colors */
+
+
+/* Light Theme (Default) */
 :root {
-  --background: #f5f7fa;      /* subtle off-white */
-  --foreground: #22223b;      /* deep blue-gray */
-  --primary: #3a86ff;         /* modern blue */
-  --secondary: #adb5bd;       /* soft gray */
-  --accent: #ffbe0b;          /* vibrant yellow */
-  --border: #e0e1dd;          /* light border */
+  --background: #f8fafc;      /* slate-50, a clean and bright background */
+  --foreground: #0f172a;      /* slate-900, strong, high-contrast text */
+  --primary: #2563eb;         /* blue-600, a confident and professional primary blue */
+  --secondary: #475569;       /* slate-600, for secondary text and elements */
+  --accent: #1d4ed8;          /* blue-700, a deeper blue for hover states, providing clear feedback */
+  --border: #e2e8f0;          /* slate-200, a subtle border for cards and layouts */
+  --header-bg: #ffffff;       /* A crisp, pure white header background */
+  --menu-hover: var(--accent);
+  --menu-hover-text: #ffffff;
 }
 
-/* Dark mode colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #232946;    /* deep blue */
-    --foreground: #f4faff;    /* near-white */
-    --primary: #3a86ff;       /* same blue for consistency */
-    --secondary: #b8c1ec;     /* soft blue-gray */
-    --accent: #ffbe0b;        /* vibrant yellow */
-    --border: #393e46;        /* dark border */
-  }
+/* Dark Theme */
+[data-theme="dark"] {
+  --background: #0f172a;      /* slate-900, a deep, professional blue-gray */
+  --foreground: #e2e8f0;      /* slate-200, clear and readable text */
+  --primary: #3b82f6;         /* blue-500, a vibrant blue that stands out in dark mode */
+  --secondary: #94a3b8;       /* slate-400, a calm secondary color */
+  --accent: #60a5fa;          /* blue-400, a brighter blue for engaging hover states */
+  --border: #1e293b;          /* slate-800, for subtle separation and depth */
+  --header-bg: #0f172a;       /* The header shares the background for a seamless look */
+  --menu-hover: var(--accent);
+  --menu-hover-text: #0f172a; /* High-contrast text for the hover state */
 }
 
+/* Base body styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Professional Header Style */
+.site-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Menu Link Styles */
+.menu-link {
+  color: var(--primary);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* 6px */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.menu-link:hover {
+  background-color: var(--menu-hover);
+  color: var(--menu-hover-text);
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+  color: var(--primary);
+  background-color: var(--header-bg);
+  border: 1px solid var(--border);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent);
+  color: var(--menu-hover-text);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    color: #0f172a; /* Explicitly set text color on dark hover for contrast */
 }
