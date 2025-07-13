@@ -1,27 +1,15 @@
-
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata = {
-  title: "Your Portfolio",
-  description: "A modern, professional portfolio site",
+  title: "Amit Bahuguna | Full Stack Developer Portfolio",
+  description: "Portfolio of Amit Bahuguna, a passionate full stack developer specializing in modern web technologies.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-white dark:bg-[#0a192f] text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
         <Header />
         {children}
       </body>
